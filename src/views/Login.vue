@@ -46,33 +46,33 @@
 </template>
 
 <script lang="ts">
-  import firebase from 'firebase';
+import firebase from 'firebase';
 
-  export default {
-    name: 'login',
-    data() {
-      return {
-        email: '',
-        password: '',
-        loading: false
-      }
+export default {
+  name: 'login',
+  data() {
+    return {
+      email: '',
+      password: '',
+      loading: false,
+    };
+  },
+  methods: {
+    submitForm() {
+      this.loading = true;
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+        (user) => {
+          this.$router.replace('area-pazienti');
+          this.loading = false;
+        },
+        (err) => {
+          alert('ERROR: ' + err.message);
+          this.loading = false;
+        },
+      );
     },
-    methods: {
-      submitForm() {
-        this.loading = true;
-        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-          (user) => {
-            this.$router.replace('area-pazienti');
-            this.loading = false;
-          },
-          (err) => {
-            alert('ERROR: ' + err.message);
-            this.loading = false;
-          }
-        )
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style lang="scss">

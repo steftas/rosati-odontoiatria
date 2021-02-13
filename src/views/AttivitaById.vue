@@ -81,63 +81,64 @@
 </template>
 
 <script lang="ts">
-  const fb = require('../firebaseConfig.ts');
+const fb = require('../firebaseConfig.ts');
 
-  export default {
-    data() {
-      return {
-        activeTab: '',
-        attivitaList : [],
-        attivitaById: {},
-        menuShown: false,
-        showShareBtns: false,
-        currentUrl: window.location.href
-      }
+export default {
+  data() {
+    return {
+      activeTab: '',
+      attivitaList : [],
+      attivitaById: {},
+      menuShown: false,
+      showShareBtns: false,
+      currentUrl: window.location.href,
+    };
+  },
+  created() {
+    this.loadAttivita();
+  },
+  methods: {
+    selectTab(id: string) {
+      this.$router.push({ name: 'attivitaById', params: { id } });
+
+      this.loadAttivitaById(id);
+      this.menuToggle();
     },
-    created() {
-      this.loadAttivita();
-    },
-    methods: {
-      selectTab(id: string) {
-        this.$router.push({ name: 'attivitaById', params: { id: id } });
-
-        this.loadAttivitaById(id);
-        this.menuToggle();
-      },
-      loadAttivita() {
-        // realtime updates from our posts collection
-        fb.attivitaCollection.orderBy('dateCreated', 'desc').onSnapshot(querySnapshot  => {
-          querySnapshot.forEach(doc => {
-            let post = doc.data();
-            post.id = doc.id;
-            this.attivitaList.push(post);
-          });
-
-          this.loadAttivitaById(this.$route.params.id);
-        })
-      },
-      loadAttivitaById(id) {
-        fb.attivitaCollection.doc(id).get().then(data => {
-          console.log(data.data());
-          this.attivitaById = data.data();
-          this.activeTab = id;
+    loadAttivita() {
+      // realtime updates from our posts collection
+      fb.attivitaCollection.orderBy('dateCreated', 'desc').onSnapshot((querySnapshot)  => {
+        querySnapshot.forEach((doc) => {
+          const post = doc.data();
+          post.id = doc.id;
+          this.attivitaList.push(post);
         });
-      },
-      menuToggle() {
-        if (window.innerWidth < 768) {
-          let ul = (<HTMLElement>document.getElementsByClassName('responsive-sub-menu')[0]);
 
-          if (this.menuShown) {
-              ul.style.position = 'absolute';
-          } else {
-              ul.style.position = 'static';
-          }
+        this.loadAttivitaById(this.$route.params.id);
+      });
+    },
+    loadAttivitaById(id) {
+      fb.attivitaCollection.doc(id).get().then((data) => {
+        console.log(data.data());
+        this.attivitaById = data.data();
+        this.activeTab = id;
+      });
+    },
+    menuToggle() {
+      if (window.innerWidth < 768) {
+        const ul = (<HTMLElement>document.getElementsByClassName('responsive-sub-menu')[0]);
 
-          this.menuShown = !this.menuShown;
+        if (this.menuShown) {
+            ul.style.position = 'absolute';
+        } else {
+            ul.style.position = 'static';
         }
+
+        this.menuShown = !this.menuShown;
       }
     }
   }
+}
+;;
 </script>
 
 <style lang="scss">

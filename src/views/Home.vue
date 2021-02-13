@@ -41,16 +41,16 @@
 </template>
 
 <script lang="ts">
-  export default {
-      mounted() {
-          setTimeout(() => {
-              let screenHeight = window.innerHeight;
-              let appHeight = document.getElementById('app').clientHeight;
-              let a = document.getElementById('h1-home');
-              a.style.minHeight = (a.clientHeight + (screenHeight - appHeight)) + 'px';
-          }, 1)
-      }
-  }
+export default {
+    mounted() {
+        setTimeout(() => {
+            const screenHeight = window.innerHeight;
+            const appHeight = document.getElementById('app').clientHeight;
+            const a = document.getElementById('h1-home');
+            a.style.minHeight = (a.clientHeight + (screenHeight - appHeight)) + 'px';
+        }, 1);
+    },
+};
 </script>
 
 <style lang="scss">

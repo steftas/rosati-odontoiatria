@@ -109,29 +109,29 @@
 </template>
 
 <script lang="ts">
-  export default {
-    data() {
-      return {
-        showSecondNav: false,
-      }
-    },
-    mounted() {
+export default {
+  data() {
+    return {
+      showSecondNav: false,
+    };
+  },
+  mounted() {
+    if (this.$route.name === 'home') {
+      this.showSecondNav = false;
+    } else {
+      this.showSecondNav = true;
+    }
+  },
+  watch: {
+    $route() {
       if (this.$route.name === 'home') {
         this.showSecondNav = false;
       } else {
         this.showSecondNav = true;
       }
     },
-    watch: {
-      $route: function() {
-        if (this.$route.name === 'home') {
-          this.showSecondNav = false;
-        } else {
-          this.showSecondNav = true;
-        }
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style scoped lang="scss">

@@ -57,9 +57,9 @@
 </template>
 
 <script lang="ts">
-  export default {
+export default {
 
-  }
+};
 </script>
 
 <style lang="scss">

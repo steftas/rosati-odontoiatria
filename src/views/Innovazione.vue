@@ -24,18 +24,18 @@
 </template>
 
 <script lang="ts">
-  export default {
-    mounted() {
-      let screenHeight = window.innerHeight;
-      let appHeight = document.getElementById('app').clientHeight;
+export default {
+  mounted() {
+    const screenHeight = window.innerHeight;
+    const appHeight = document.getElementById('app').clientHeight;
 
-      if (appHeight < screenHeight) {
-        console.log(document.getElementById('innovazione'));
-        let a = document.getElementById('innovazione');
-        a.style.minHeight = (a.clientHeight + (screenHeight - appHeight)) + 'px';
-      }
+    if (appHeight < screenHeight) {
+      console.log(document.getElementById('innovazione'));
+      const a = document.getElementById('innovazione');
+      a.style.minHeight = (a.clientHeight + (screenHeight - appHeight)) + 'px';
     }
-  }
+  },
+};
 </script>
 
 <style lang="scss">

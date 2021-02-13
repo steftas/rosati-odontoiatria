@@ -75,43 +75,43 @@
 </template>
 
 <script lang="ts">
-  export default {
-    data() {
-      return {
-        activeTab: 'storia',
-        menuShown: false
-      }
-    },
-    mounted() {
-      let screenHeight = window.innerHeight;
-      let appHeight = document.getElementById('app').clientHeight;
+export default {
+  data() {
+    return {
+      activeTab: 'storia',
+      menuShown: false,
+    };
+  },
+  mounted() {
+    const screenHeight = window.innerHeight;
+    const appHeight = document.getElementById('app').clientHeight;
 
-      if (appHeight < screenHeight) {
-        let a = document.getElementById('protesi');
-        a.style.minHeight = (a.clientHeight + (screenHeight - appHeight)) + 'px';
-      }
-    },
-    methods: {
-      selectTab(tab: string) {
-        this.activeTab = tab;
-
-        if (window.innerWidth < 767) {
-            this.menuToggle();
-        }
-      },
-      menuToggle() {
-        let ul = (<HTMLElement>document.getElementsByClassName('responsive-sub-menu')[0]);
-
-        if (this.menuShown) {
-          ul.style.position = 'absolute';
-        } else {
-          ul.style.position = 'static';
-        }
-
-        this.menuShown = !this.menuShown;
-      }
+    if (appHeight < screenHeight) {
+      const a = document.getElementById('protesi');
+      a.style.minHeight = (a.clientHeight + (screenHeight - appHeight)) + 'px';
     }
-  }
+  },
+  methods: {
+    selectTab(tab: string) {
+      this.activeTab = tab;
+
+      if (window.innerWidth < 767) {
+          this.menuToggle();
+      }
+    },
+    menuToggle() {
+      const ul = (document.getElementsByClassName('responsive-sub-menu')[0] as HTMLElement);
+
+      if (this.menuShown) {
+        ul.style.position = 'absolute';
+      } else {
+        ul.style.position = 'static';
+      }
+
+      this.menuShown = !this.menuShown;
+    },
+  },
+};
 </script>
 
 <style lang="scss">

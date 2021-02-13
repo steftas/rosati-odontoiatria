@@ -35,28 +35,28 @@
 </template>
 
 <script lang="ts">
-  import firebase from "firebase";
+import firebase from 'firebase';
 
-  export default {
-    name: 'area-pazineti',
-    mounted() {
-      let screenHeight = window.innerHeight;
-      let appHeight = document.getElementById('app').clientHeight;
+export default {
+  name: 'area-pazineti',
+  mounted() {
+    const screenHeight = window.innerHeight;
+    const appHeight = document.getElementById('app').clientHeight;
 
-      if (appHeight < screenHeight) {
-        console.log(document.getElementById('area-pazienti'));
-        let a = document.getElementById('area-pazienti');
-        a.style.minHeight = (a.clientHeight + (screenHeight - appHeight)) + 'px';
-      }
-    },
-    methods: {
-      logout() {
-        firebase.auth().signOut().then(() => {
-          this.$router.replace('login');
-        })
-      }
+    if (appHeight < screenHeight) {
+      console.log(document.getElementById('area-pazienti'));
+      const a = document.getElementById('area-pazienti');
+      a.style.minHeight = (a.clientHeight + (screenHeight - appHeight)) + 'px';
     }
-  }
+  },
+  methods: {
+    logout() {
+      firebase.auth().signOut().then(() => {
+        this.$router.replace('login');
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss">

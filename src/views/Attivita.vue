@@ -61,58 +61,59 @@
 </template>
 
 <script lang="ts">
-  const fb = require('../firebaseConfig.ts');
+const fb = require('../firebaseConfig.ts');
 
-  export default {
-    data() {
-      return {
-        activeTab: '',
-        attivitaList : [],
-        menuShown: false,
-        showShareBtns: false,
-        currentUrl: window.location.href
-      }
+export default {
+  data() {
+    return {
+      activeTab: '',
+      attivitaList : [],
+      menuShown: false,
+      showShareBtns: false,
+      currentUrl: window.location.href,
+    };
+  },
+  created() {
+    this.loadAttivita();
+  },
+  methods: {
+    selectTab(tab: string) {
+      this.activeTab = tab;
+      this.menuToggle();
     },
-    created() {
-      this.loadAttivita();
-    },
-    methods: {
-      selectTab(tab: string) {
-        this.activeTab = tab;
-        this.menuToggle();
-      },
-      loadAttivita() {
-        // realtime updates from our posts collection
-        fb.attivitaCollection.orderBy('dateCreated', 'desc').onSnapshot(querySnapshot  => {
+    loadAttivita() {
+      // realtime updates from our posts collection
+      fb.attivitaCollection.orderBy('dateCreated', 'desc').onSnapshot((querySnapshot)  => {
 
-          let index = 0;
-          querySnapshot.forEach(doc => {
-            let post = doc.data();
-            post.id = doc.id;
-            this.attivitaList.push(post);
+        let index = 0;
+        querySnapshot.forEach((doc) => {
+          const post = doc.data();
+          post.id = doc.id;
+          this.attivitaList.push(post);
 
-            if (index == 0) {
-              this.activeTab = doc.id;
-            }
-            index++;
-          });
-        })
-      },
-      menuToggle() {
-        if (window.innerWidth < 768) {
-          let ul = (<HTMLElement>document.getElementsByClassName('responsive-sub-menu')[0]);
-
-          if (this.menuShown) {
-              ul.style.position = 'absolute';
-          } else {
-              ul.style.position = 'static';
+          if (index == 0) {
+            this.activeTab = doc.id;
           }
+          index++;
+        });
+      });
+    },
+    menuToggle() {
+      if (window.innerWidth < 768) {
+        const ul = (<HTMLElement>document.getElementsByClassName('responsive-sub-menu')[0]);
 
-          this.menuShown = !this.menuShown;
+        if (this.menuShown) {
+            ul.style.position = 'absolute';
+        } else {
+            ul.style.position = 'static';
         }
+
+        this.menuShown = !this.menuShown;
       }
     }
   }
+}
+;;
 </script>
 
 <style lang="scss">

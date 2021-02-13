@@ -13,29 +13,29 @@
 </template>
 
 <script lang="ts">
-  import Header from '@/components/Header.vue';
-  import Footer from '@/components/Footer.vue';
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 
-  export default {
-    data() {
-      return {
-        hideHeaderFooter: false,
+export default {
+  data() {
+    return {
+      hideHeaderFooter: false,
+    };
+  },
+  components: {
+    Header,
+    Footer,
+  },
+  watch: {
+    $route() {
+      if (this.$route.name === 'adminattivita') {
+        this.hideHeaderFooter = true;
+      } else {
+        this.hideHeaderFooter = false;
       }
     },
-    components: {
-      Header,
-      Footer,
-    },
-    watch: {
-      $route: function() {
-        if (this.$route.name === 'adminattivita') {
-          this.hideHeaderFooter = true;
-        } else {
-          this.hideHeaderFooter = false;
-        }
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style lang="scss">

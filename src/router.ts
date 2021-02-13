@@ -4,16 +4,18 @@ import Home from './views/Home.vue';
 import Terapia from './views/Terapia.vue';
 import Protesi from './views/Protesi.vue';
 import Innovazione from './views/Innovazione.vue';
-import Pubblicazioni from "./views/Pubblicazioni.vue";
-import Contatti from "./views/Contatti.vue";
-import Attivita from "./views/Attivita.vue";
-import AttivitaById from "./views/AttivitaById.vue";
-import Areapazienti from "./views/Areapazienti.vue";
-import Login from "./views/Login.vue";
-import firebase from "firebase";
+import Pubblicazioni from './views/Pubblicazioni.vue';
+import Contatti from './views/Contatti.vue';
+import Attivita from './views/Attivita.vue';
+import AttivitaById from './views/AttivitaById.vue';
+import Areapazienti from './views/Areapazienti.vue';
+import Login from './views/Login.vue';
+import Miglioramento from './views/Miglioramento.vue';
+import Amici from './views/Amici.vue';
+import firebase from 'firebase';
 
-import Adminlogin from "./views/Adminlogin.vue";
-import Adminattivita from "./views/Adminattivita.vue";
+import Adminlogin from './views/Adminlogin.vue';
+import Adminattivita from './views/Adminattivita.vue';
 
 Vue.use(Router);
 
@@ -69,8 +71,8 @@ const router = new Router({
       name: 'areapazienti',
       component: Areapazienti,
       meta: {
-        requiresAuth: true
-      }
+        requiresAuth: true,
+      },
     },
     {
       path: '/contatti',
@@ -92,15 +94,25 @@ const router = new Router({
       name: 'adminattivita',
       component: Adminattivita,
       meta: {
-        requiresAuth: true
-      }
+        requiresAuth: true,
+      },
+    },
+    {
+      path: '/miglioramento',
+      name: 'miglioramento',
+      component: Miglioramento,
+    },
+    {
+      path: '/amici',
+      name: 'amici',
+      component: Amici,
     },
   ],
 });
 
 router.beforeEach((to, from, next) => {
   const currentUser = firebase.auth().currentUser;
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) {
     next('login');

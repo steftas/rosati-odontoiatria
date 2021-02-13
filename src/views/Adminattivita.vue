@@ -57,40 +57,40 @@
 </template>
 
 <script lang="ts">
-  const fb = require('../firebaseConfig.ts');
+const fb = require('../firebaseConfig.ts');
 
-  export default {
-    name: 'adminattivita',
-    data() {
-      return {
-        title: '',
-        imageUrl: '',
-        link: '',
-        text: ''
-      }
+export default {
+  name: 'adminattivita',
+  data() {
+    return {
+      title: '',
+      imageUrl: '',
+      link: '',
+      text: '',
+    };
+  },
+  methods: {
+    logout() {
+      fb.auth.signOut().then(() => {
+        this.$router.replace('login');
+      });
     },
-    methods: {
-      logout() {
-        fb.auth.signOut().then(() => {
-          this.$router.replace('login');
-        })
-      },
-      submitForm() {
-        let data = {
-          title: this.title,
-          imageUrl: this.imageUrl,
-          link: this.link,
-          text: this.text
-        };
+    submitForm() {
+      const data = {
+        title: this.title,
+        imageUrl: this.imageUrl,
+        link: this.link,
+        text: this.text,
+      };
 
-        fb.attivitaCollection.add(data).then( (response) => {
-          console.log('RES', response);
-        }).catch(err => {
-          console.log(err)
-        })
-      }
-    }
-  }
+      fb.attivitaCollection.add(data).then( (response) => {
+        console.log('RES', response);
+      }).catch((err) => {
+        console.log(err);
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss">

@@ -33,29 +33,29 @@
 </template>
 
 <script lang="ts">
-  import firebase from 'firebase';
+import firebase from 'firebase';
 
-  export default {
-    name: 'login',
-    data() {
-      return {
-        email: '',
-        password: ''
-      }
+export default {
+  name: 'login',
+  data() {
+    return {
+      email: '',
+      password: '',
+    };
+  },
+  methods: {
+    submitForm() {
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
+        (user) => {
+          this.$router.replace('area-pazienti');
+        },
+        (err) => {
+          alert('ERROR' + err.message);
+        },
+      );
     },
-    methods: {
-      submitForm() {
-        firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-          (user) => {
-            this.$router.replace('area-pazienti');
-          },
-          (err) => {
-            alert('ERROR' + err.message)
-          }
-        )
-      }
-    }
-  }
+  },
+};
 </script>
 
 <style lang="scss">
