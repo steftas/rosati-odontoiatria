@@ -2,7 +2,7 @@
   <div id="amici">
     <div class="container h-100">
       <div class="row h-100">
-        <div class="col-md-6 align-self-center text-right">
+        <div class="col-md-6 align-self-center">
           <a href="https://goo.gl/maps/bsE2FA2nRBf84ibt6" class="contact-box-div" target="_blank">
             <h3>Recensione Google:</h3>
 
@@ -38,7 +38,12 @@
 <style lang="scss">
   #amici {
     background: #fff;
-    height: calc(100vh - 538px);
+    padding: 60px 0;
+    min-height: 350px;
+
+    .row > div {
+      margin: 0 0 60px;
+    }
 
     .contact-box-div {
       border-left: 1px solid #314857;
@@ -75,6 +80,12 @@
         width: 100%;
         max-width: 128px;
       }
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    #amici {
+      height: calc(100vh - 538px);
     }
   }
 </style>
