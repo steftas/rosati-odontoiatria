@@ -10,23 +10,118 @@
 
           <div class="row download-row">
             <div class="col-md-4 col-sm-6">
-              <a href="http://easymyo.it/wp-content/uploads/2019/marina-di-carrar-7-8-giugno.pdf">
-                <img src="@/assets/images/file-download-solid.svg" />
-                <span> Test download 1</span>
+              <a href="https://sway.office.com/4xSNQ5JU61pBLYHe?ref=Link" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>La diga di gomma</span>
               </a>
             </div>
             <div class="col-md-4 col-sm-6">
-              <a href="http://easymyo.it/wp-content/uploads/2019/marina-di-carrar-7-8-giugno.pdf">
-                <img src="@/assets/images/file-download-solid.svg" />
-                <span> Test download 2</span>
+              <a href="https://sway.office.com/88dStYrwHSJ0NqQZ?ref=Link" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Protesi fissa cementata su denti naturali</span>
               </a>
             </div>
             <div class="col-md-4 col-sm-6">
-              <a href="http://easymyo.it/wp-content/uploads/2019/marina-di-carrar-7-8-giugno.pdf">
-                <img src="@/assets/images/file-download-solid.svg" />
-                <span> Test download 3</span>
+              <a href="https://sway.office.com/nzF2e3GSXZ26KtOq?ref=Link" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Ricostruzione dentale tramite perno in fibra</span>
               </a>
             </div>
+
+
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/gacdjKeqPDjvZMlu?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Igiene dentale professionale</span>
+              </a>
+            </div>            
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/K9RBzbg0EfKqWyUJ?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Ricostruzione dentale diretta (otturazione)</span>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/1lmQ9WDLBsyVyHTG?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Levigatura radicolare</span>
+              </a>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/Nmty6pkj4t7iG30E?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Intarsio in ceramica/composito</span>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/DIOO6gUV5m5otjKU?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Protesi dentale su impianti</span>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/xHWgrJRdhfdXnVBT?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Aumento di volume osseo</span>
+              </a>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/f2FRTBjCGNSgVfYC?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Trattamento canalare</span>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/gOsMkh3WvN1ml718?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>La patologia parodontale</span>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/JfslArm9BpM06Ydy?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>La radiografia odontoiatrica</span>
+              </a>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/t91ASzZu8qWO8yUR?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Fluoroprofilassi</span>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/FPjHXhuvjXK0hqD2?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Lesioni non cariose dei denti</span>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/7olc386FrOTg6xof?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Otturazioni, quale materiale?</span>
+              </a>
+            </div>
+
+
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/b2jjB7zN40fN1yyo?ref=Link" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Lesioni dello smalto nel piccolo paziente</span>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <a href="https://sway.office.com/mApQ5Y5rhnKW18r3?ref=Link&loc=mysways" target="_blank" rel="noopener">
+                <img src="@/assets/images/sway_logo.png" />
+                <span>Sbiancamento dentale</span>
+              </a>
+            </div>
+            
           </div>
         </div>
       </div>

@@ -60,6 +60,10 @@ export default {
   methods: {
     submitForm() {
       this.loading = true;
+      if (!this.email.includes('@')) {
+        this.email = `${this.email}@admin.com`
+      }
+
       firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
         (user) => {
           this.$router.replace('area-pazienti');
