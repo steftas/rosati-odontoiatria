@@ -19,3 +19,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Github token
+# 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

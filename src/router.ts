@@ -12,6 +12,7 @@ import Areapazienti from './views/Areapazienti.vue';
 import Login from './views/Login.vue';
 import Miglioramento from './views/Miglioramento.vue';
 import Amici from './views/Amici.vue';
+import AmiciSZ from './views/AmiciSZ.vue';
 import firebase from 'firebase';
 
 import Adminlogin from './views/Adminlogin.vue';
@@ -104,8 +105,17 @@ const router = new Router({
     },
     {
       path: '/amici',
-      name: 'amici',
+      redirect: '/amici-ud',
+    },
+    {
+      path: '/amici-ud',
+      name: 'amici-ud',
       component: Amici,
+    },
+    {
+      path: '/amici-sz',
+      name: 'amici-sz',
+      component: AmiciSZ,
     },
   ],
 });
