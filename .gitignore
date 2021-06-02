@@ -21,4 +21,4 @@ yarn-error.log*
 *.sw?
 
 # Github token
-# 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
+github-token.txt
